@@ -1,0 +1,99 @@
+@using wcLoto.Models
+@model wcLoto.Models.User
+@{
+   Layout = "_Layout1";
+}
+
+<div class="container pull-right" style="width: 79%;">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1> Tables </h1>
+            <hr>
+        </div>
+    <div class="col-sm-6 text-center">
+        <!-- My Tables table -->
+        <div class="well">
+            <h1> My Tables</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th>Rank (#)</th>
+                    <th>League Name</th>
+                    <th>Points</th>
+                    <th style="width: 36px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        @if (@Model.tables.Count > 0)
+                        {
+                            @for(int i = 0; i < @Model.tables.Count; i++)
+                            {
+                                <td>@i+1</td>
+                                <td>@Model.tables[i].name</td>
+                                <td>@Model.totalScore</td>
+                            }
+                        }
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Glick</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Motionize</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Caffe Ruth</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bluestone</td>
+                        <td>600</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Rubbi</td>
+                        <td>900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <form class="col-sm-6" action="joinTable">
+            <div class="well">
+                <h3>Join Table</h3>
+                <div class="form-group">
+                    <label for="tableName">Table Name:</label>
+                    <input type="text" class="form-control" name="joinName" id="tableName" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" name="joinPassword" id="pwd" placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </form>
+            <form class="col-sm-6" action="createTable">
+                <div class="well">
+                    <h3>Create Table</h3>
+                    <div class="form-group">
+                        <label for="tableName">Table Name:</label>
+                        <input type="text" class="form-control" name="createName" id="tableName" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" name="joinPassword" id="pwd" placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+        
+</div>

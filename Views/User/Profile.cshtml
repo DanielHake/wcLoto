@@ -1,0 +1,109 @@
+@using wcLoto.Models
+@model wcLoto.Models.User
+@{
+   Layout = "_Layout1";
+}
+
+<div class="container pull-right" style="width: 79%;">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1> Profile </h1>
+            <hr>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li >@Html.ActionLink("Tables", "Tables", "User", @Model, new { @class= "" }) </li>
+                <li >@Html.ActionLink("Specific Table", "Table", "User", @Model, new { @class= "" })</li>
+            </ul>
+        </div>
+        <!-- my bets table -->
+        <div class="col-sm-12 text-center">       
+            <div class="well">
+                <h1> @Model.name </h1>
+                <h3>My Bets</h3>
+                <h4>Total Score: <span> @Model.totalScore </span></h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center"> Golden Boot </th>
+                            <th class="text-center"> Winning Team </th>
+                            <th style="width: 36px;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @if(@Model.bets.Count > 0)
+                            {
+                                @for(int j = 0; j < 2; j++)
+                                {
+                                <form method="post" action="@Url.Action("updateBetNoteFromProfile")">
+                                        
+                                        <td>
+                                            <input class="hidden" name="userId" type="text" placeholder="@Model._id" value="@Model._id">
+                                            <input class="hidden" name="betId" type="text" placeholder="@Model.bets[j]._id" value="@Model.bets[j]._id">
+                                            <input class="text-center" name="note" style="max-width: 150px;" type="text" value="@Model.bets[j].note" placeholder=@Model.bets[j].note>
+                                            <button class="" type="submit"><span class="glyphicon glyphicon-pencil"></span></button>
+                                        </td>
+                                    </form>
+                                }
+                            }
+                            @if (@Model.bets.Count == 0)
+                            {
+                                <td></td>
+                                <td></td>
+                            }
+                            <td><span class="glyphicon glyphicon-ok hidden"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <thead >
+                        <tr>
+                            <th class="text-center"> Date </th>
+                            <th class="text-center"> Game </th>
+                            <th class="text-center">Score</th>
+                            <th class="text-center">Bet</th>
+                            <th style="width: 35px;"></th>
+                            <th class="text-center">Double Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(int i = 2 ;i <@Model.bets.ToArray().Length; i++)
+                        {
+                            <tr>
+                                <td>@Model.bets[i].game.date </td>
+                                <td>@Model.bets[i].game.teamA.name - @Model.bets[i].game.teamB.name </td>
+                                <td>@Model.bets[i].game.goalsA - @Model.bets[i].game.goalsB </td>
+                                <td>
+                                    <form method="post" action="@Url.Action("updateBetFromProfile")">
+                                        <input class="hidden" name="userId" type="text" placeholder="@Model._id" value="@Model._id">
+                                        <input class="hidden" name="betId" type="text" placeholder="@Model.bets[i]._id" value="@Model.bets[i]._id">
+                                        <input class="text-center" name="teamAScore" style="max-width: 50px;" type="text" value="@Model.bets[i].scoreTeamA" placeholder=@Model.bets[i].scoreTeamA>
+                                        <input class="text-center" name="teamBScore" style="max-width: 50px;" type="text" value="@Model.bets[i].scoreTeamB" placeholder=@Model.bets[i].scoreTeamB>
+                                        <td><button class="pull-left" type="submit">Update</button></td>
+                                    </form>
+                                </td>
+
+                                <td>
+                                @if(@Model.bets[i].isDouble)
+                                {
+                                    <span class="glyphicon glyphicon-flash"></span>
+                                }
+                                </td>
+                            </tr>
+                        }
+                        <tr>
+                            <td>01/08 - 19:00</td>
+                            <td>Brazil - Argentina</td>
+                            <td>?</td>
+                            <td><input class="" style="max-width: 50px;" type="text" placeholder="   X-X"></td>
+                            <td></td>
+                            <td><span class="glyphicon glyphicon-flash"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    

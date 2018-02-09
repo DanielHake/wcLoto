@@ -1,0 +1,11 @@
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\bin\Debug\netcoreapp2.0\wcLoto.deps.json
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\bin\Debug\netcoreapp2.0\wcLoto.runtimeconfig.json
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\bin\Debug\netcoreapp2.0\wcLoto.runtimeconfig.dev.json
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\bin\Debug\netcoreapp2.0\wcLoto.dll
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\bin\Debug\netcoreapp2.0\wcLoto.pdb
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\obj\Debug\netcoreapp2.0\wcLoto.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\obj\Debug\netcoreapp2.0\wcLoto.AssemblyInfoInputs.cache
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\obj\Debug\netcoreapp2.0\wcLoto.AssemblyInfo.cs
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\obj\Debug\netcoreapp2.0\wcLoto.dll
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\obj\Debug\netcoreapp2.0\wcLoto.pdb
+C:\Users\Daniel\Downloads\Senior Year\Cloud computing\wcLoto\obj\Debug\netcoreapp2.0\wcLoto.csprojResolveAssemblyReference.cache
